@@ -29,3 +29,12 @@ class BrowserManager:
     async def click_xpath(self, expression):
         el_handle = await self.page.xpath(expression)
         await el_handle[0].click()
+
+    async def get_element(self, selector):
+        return await self.page.querySelector(selector)
+
+    async def get_elements(self, selector):
+        return await self.page.querySelectorAll(selector)
+
+    async def get_element_text(self, selector):
+        return await self.page.evaluate(f'document.querySelector("{selector}").innerText')
