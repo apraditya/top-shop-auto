@@ -19,9 +19,12 @@ class BrowserManager:
     async def screenshot(self, path):
         await self.page.screenshot({'path': path})
 
-    async def type(self, selector, text):
+    async def type_text(self, selector, text):
         await self.page.focus(selector)
         await self.page.keyboard.type(text)
+
+    async def press_enter(self):
+        await self.page.keyboard.press('Enter')
 
     async def click(self, selector):
         await self.page.click(selector)
@@ -38,3 +41,21 @@ class BrowserManager:
 
     async def get_element_text(self, selector):
         return await self.page.evaluate(f'document.querySelector("{selector}").innerText')
+
+    async def wait_for_element(self, selector, options = None):
+        try:
+            await self.page.waitForSelector(selector, options)
+            if (options != None and options.get('get_element') == True):
+                return await self.get_element(selector)
+        except TimeoutError:
+            print(f'Element {selector} not found')
+
+    async def wait_and_click(self, selector, options = None):
+        if (options == None):
+            options = { 'visible': True }
+        else:
+            options['visible'] = True
+
+        options['get_element'] = True
+        element = await self.wait_for_element(selector, options)
+        await element.click()
