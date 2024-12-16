@@ -39,24 +39,25 @@ class Tiptop:
         await self.search_product(product_name)
 
         product_card_selector = '.section.recent-part .product-card'
-        await self.browser_manager.wait_and_click(product_card_selector)
-
         product_name_selector = '.details-content .details-name'
-        product_detail = await self.browser_manager.get_element(product_name_selector)
 
+        return await self.retry_click(product_card_selector, product_name_selector)
+
+    async def retry_click(self, selector, expect_selector):
+        await self.browser_manager.wait_and_click(selector)
+
+        expect_element = await self.browser_manager.get_element(expect_selector)
         retries = 0
-        while (retries < 3 and product_detail == None):
+        while (retries < 3 and expect_element == None):
             retries += 1
             print('retrying for ', retries)
 
-            product_card = await self.browser_manager.wait_for_element(product_card_selector, { 'get_element': True })
-            if (product_card != None):
-                print('product_card is still exists', product_card)
-                await self.browser_manager.click(product_card_selector)
+            element = await self.browser_manager.wait_for_element(selector, { 'get_element': True })
+            if (element != None):
+                print('element is still exists', element)
+                await self.browser_manager.click(selector)
                 sleep(retries)
 
-            product_detail = await self.browser_manager.get_element(product_name_selector)
+            expect_element = await self.browser_manager.get_element(expect_selector)
 
-        if (product_detail == None):
-            print('product_detail is still None')
-            return
+        return expect_element
