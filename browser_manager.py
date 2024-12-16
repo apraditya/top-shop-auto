@@ -23,8 +23,22 @@ class BrowserManager:
         await self.page.focus(selector)
         await self.page.keyboard.type(text)
 
+    async def press_backspace(self):
+        await self.page.keyboard.press('Backspace')
+
+    async def press_ctrl_a(self):
+        await self.page.keyboard.down('Control')
+        await self.page.keyboard.press('KeyA')
+        await self.page.keyboard.up('Control')
+
     async def press_enter(self):
         await self.page.keyboard.press('Enter')
+
+    async def replace_text(self, selector, text):
+        await self.page.focus(selector)
+        await self.press_ctrl_a()
+        await self.press_backspace()
+        await self.page.keyboard.type(text)
 
     async def click(self, selector):
         await self.page.click(selector)

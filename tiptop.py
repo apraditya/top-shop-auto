@@ -63,9 +63,18 @@ class Tiptop:
 
         return expect_element
 
-    async def add_product_to_cart(self, product_name, size):
+    async def add_product_to_cart(self, product_name, size, quantity):
         await self.goto_product(product_name)
         size_element = await self.select_product_size(size)
+
+        if (size_element == None):
+            print(f'size {size} not found')
+            return
+
+        await self.set_product_quantity(quantity)
+
+        add_button_selector = '.details-content .details-action-group .product-adds'
+        await self.browser_manager.click(add_button_selector)
 
     async def select_product_size(self, size):
         available_sizes_selector = '.details-content .row div'
@@ -86,3 +95,7 @@ class Tiptop:
                 chosen_size = await self.browser_manager.get_element(chosen_size_selector)
 
         return size_element
+
+    async def set_product_quantity(self, quantity):
+        quantity_selector = '.details-content .product-action input[type="text"]'
+        await self.browser_manager.replace_text(quantity_selector, str(quantity))
