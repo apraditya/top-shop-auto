@@ -42,6 +42,18 @@ class BrowserManager:
     async def get_element_text(self, selector):
         return await self.page.evaluate(f'document.querySelector("{selector}").innerText')
 
+    async def get_element_by_text(self, selector, text):
+        elements = await self.get_elements(selector)
+        for element in elements:
+            inner_text = await element.Jeval('a', f'node => node.innerText')
+            print('comparing', inner_text, 'with', text)
+            if inner_text == text:
+                # return element
+                # print('returning element', element)
+                return await element.querySelector('a')
+
+        print(f"Element with text '{text}' not found within selector '{selector}'")
+
     async def wait_for_element(self, selector, options = None):
         try:
             await self.page.waitForSelector(selector, options)

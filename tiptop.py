@@ -13,6 +13,7 @@ class Tiptop:
 
         sel_path = f'//span[@class="card-text-store" and contains(text(), "{self.branch}")]'
         await self.browser_manager.click_xpath(sel_path)
+        self.branch_on_page = await self.check_branch_on_page()
 
     async def page_branch(self):
         if (self.branch_on_page == None):
@@ -61,3 +62,27 @@ class Tiptop:
             expect_element = await self.browser_manager.get_element(expect_selector)
 
         return expect_element
+
+    async def add_product_to_cart(self, product_name, size):
+        await self.goto_product(product_name)
+        size_element = await self.select_product_size(size)
+
+    async def select_product_size(self, size):
+        available_sizes_selector = '.details-content .row div'
+        size_element = await self.browser_manager.get_element_by_text(available_sizes_selector, size)
+
+        if (size_element != None):
+            await size_element.click()
+
+            chosen_size_selector = '.details-content .row div a.btn-green'
+            chosen_size = await self.browser_manager.get_element(chosen_size_selector)
+
+            retries = 0
+            while (retries < 3 and chosen_size == None):
+                retries += 1
+                print('retry selecting size for ', retries)
+                await size_element.click()
+                sleep(1)
+                chosen_size = await self.browser_manager.get_element(chosen_size_selector)
+
+        return size_element
