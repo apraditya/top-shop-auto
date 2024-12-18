@@ -6,12 +6,15 @@ class BrowserManager:
         self.page = None
 
     async def open_browser_page(self):
-        self.browser = await launch({'headless': False})
-        pages = await self.browser.pages()
-        self.page = pages[0]
+        if (self.browser == None):
+            self.browser = await launch({'headless': False})
+            pages = await self.browser.pages()
+            self.page = pages[0]
 
     async def close(self):
         await self.browser.close()
+        self.browser = None
+        self.page = None
 
     async def goto(self, url):
         await self.page.goto(url)
