@@ -33,11 +33,12 @@ class Tiptop:
         await self.type_search(product_name)
         await self.browser_manager.press_enter()
 
-        result_title_selector = 'section.error-part span.fw-bold'
+        result_title_selector = '.section.recent-part .product-card'
         await self.browser_manager.wait_for_element(result_title_selector, { 'visible': True })
 
     async def goto_product(self, product_name):
         await self.search_product(product_name)
+        sleep(5)
 
         product_card_selector = '.section.recent-part .product-card'
         product_name_selector = '.details-content .details-name'
