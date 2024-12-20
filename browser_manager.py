@@ -22,6 +22,10 @@ class BrowserManager:
     async def screenshot(self, path):
         await self.page.screenshot({'path': path})
 
+    async def screenshot_element(self, selector, path):
+        element = await self.get_element(selector)
+        await element.screenshot({'path': path})
+
     async def type_text(self, selector, text):
         await self.page.focus(selector)
         await self.page.keyboard.type(text)

@@ -1,5 +1,5 @@
 from browser_manager import BrowserManager
-from time import sleep
+from time import sleep, strftime
 
 class Tiptop:
     def __init__(self, branch = 'Pondok Bambu'):
@@ -14,6 +14,7 @@ class Tiptop:
         sel_path = f'//span[@class="card-text-store" and contains(text(), "{self.branch}")]'
         await self.browser_manager.click_xpath(sel_path)
         self.branch_on_page = await self.check_branch_on_page()
+        self.mobile_menu = await self.browser_manager.get_element('.mobile-menu')
 
     async def page_branch(self):
         if (self.branch_on_page == None):
@@ -100,3 +101,26 @@ class Tiptop:
     async def set_product_quantity(self, quantity):
         quantity_selector = '.details-content .product-action input[type="text"]'
         await self.browser_manager.replace_text(quantity_selector, str(quantity))
+
+    async def open_cart(self):
+        if (self.mobile_menu == None):
+            cart_selector = '.header-widget .header-cart'
+        else:
+            cart_selector = 'button.cart-btn .fa-shopping-basket'
+
+        await self.browser_manager.click(cart_selector)
+        await self.browser_manager.wait_for_element('.cart-footer', { 'visible': True })
+
+    async def close_cart(self):
+        cart_selector = '.cart-header .cart-close'
+        await self.browser_manager.click(cart_selector)
+
+    async def screenshot_cart(self):
+        cart_sidebar_selector = '.cart-sidebar.active'
+        cart_sidebar = await self.browser_manager.get_element(cart_sidebar_selector)
+
+        if (cart_sidebar == None):
+            await self.open_cart()
+
+        timestamp = strftime("%Y%m%d%H%M")
+        await self.browser_manager.screenshot_element(cart_sidebar_selector, f'tiptop_cart_{timestamp}.png')
