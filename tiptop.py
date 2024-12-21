@@ -14,7 +14,8 @@ class Tiptop:
         sel_path = f'//span[@class="card-text-store" and contains(text(), "{self.branch}")]'
         await self.browser_manager.click_xpath(sel_path)
         self.branch_on_page = await self.check_branch_on_page()
-        self.mobile_menu = await self.browser_manager.get_element('.mobile-menu')
+        self.mobile_menu = await self.browser_manager.wait_for_element('.mobile-menu', { 'get_element': True })
+        sleep(1)
 
     async def page_branch(self):
         if (self.branch_on_page == None):
@@ -121,6 +122,7 @@ class Tiptop:
 
         if (cart_sidebar == None):
             await self.open_cart()
+            sleep(1)
 
         timestamp = strftime("%Y%m%d%H%M")
         await self.browser_manager.screenshot_element(cart_sidebar_selector, f'tiptop_cart_{timestamp}.png')
