@@ -15,7 +15,7 @@ class Tiptop:
         await self.browser_manager.click_xpath(sel_path)
         self.branch_on_page = await self.check_branch_on_page()
         self.mobile_menu = await self.browser_manager.wait_for_element('.mobile-menu', { 'get_element': True })
-        sleep(1)
+        sleep(3)
 
     async def page_branch(self):
         if (self.branch_on_page == None):
