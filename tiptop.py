@@ -125,4 +125,7 @@ class Tiptop:
             sleep(1)
 
         timestamp = strftime("%Y%m%d%H%M")
-        await self.browser_manager.screenshot_element(cart_sidebar_selector, f'tiptop_cart_{timestamp}.png')
+        await self.browser_manager.screenshot_element(
+            cart_sidebar_selector,
+            f'tiptop_cart_{timestamp}.png',
+            { 'fullPage': True })

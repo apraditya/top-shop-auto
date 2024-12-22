@@ -19,12 +19,19 @@ class BrowserManager:
     async def goto(self, url):
         await self.page.goto(url)
 
-    async def screenshot(self, path):
-        await self.page.screenshot({'path': path})
+    async def screenshot(self, path, options = None):
+        options = {} if options is None else options
+        options.update({'path': path})
 
-    async def screenshot_element(self, selector, path):
+        await self.page.screenshot(options)
+
+    async def screenshot_element(self, selector, path, options = None):
+        options = {} if options is None else options
+        options.update({'path': path})
+
         element = await self.get_element(selector)
-        await element.screenshot({'path': path})
+        if element:
+            await element.screenshot(options)
 
     async def type_text(self, selector, text):
         await self.page.focus(selector)
