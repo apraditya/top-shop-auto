@@ -43,6 +43,16 @@ Jika berhasil, skrip akan menangkap gambar keranjang dan menyimpannya ke dalam
 folder `images`. Anda dapat menggunakan file ini untuk mengirim ke Tiptop
 Shop.
 
+## Demo
+
+Lihat demo berikut:
+
+[![Tonton video](https://img.youtube.com/vi/WvL8K8uz2Nk/maxresdefault.jpg)](https://youtu.be/WvL8K8uz2Nk)
+
+Contoh screenshot:
+
+[![Cart screenshot](images/demo-tiptop_cart_202412271026-small.png)](images/demo-tiptop_cart_202412271026.png)
+
 ## Lisensi
 
 Top Shop Auto adalah kode sumber terbuka yang dikelola di bawah lisensi GPL V3.
