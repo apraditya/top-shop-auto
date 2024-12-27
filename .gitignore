@@ -6,6 +6,7 @@ __pycache__/
 
 cart*.png
 images/tiptop_cart_*.png
+order.html
 
 # C extensions
 *.so

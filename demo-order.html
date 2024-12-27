@@ -1,0 +1,1375 @@
+<!doctype html>
+<!-- saved from url=(0033)https://shop.tiptop.co.id/invoice -->
+<html lang="en">
+  <div id="gitduck-browser-extension-container">
+    <template shadowrootmode="open"
+      ><style>
+        :root {
+          margin: 0px;
+        }
+
+        body {
+          margin: 0px;
+          font-family: monospace;
+        }
+
+        .transparent {
+          opacity: 0;
+        }
+
+        .ext-modal {
+          pointer-events: auto;
+          user-select: none;
+          background-color: #313539;
+          padding: 5px;
+          color: #d7dce3;
+          cursor: move;
+          font-size: 12px !important;
+          font-family: monospace;
+          border-radius: 8px;
+          text-align: center;
+          box-shadow: 0px 2px 3px 0px rgba(0, 0, 0, 0.5);
+        }
+
+        p {
+          margin-top: 0px;
+          line-height: 16px;
+          margin-bottom: 5px;
+        }
+
+        .ext-popup-footer {
+          font-size: 0.7rem;
+          color: #a1a9b3;
+          margin-top: 20px;
+        }
+
+        .ext-popup-button-link-secondary {
+          color: #a1a9b3;
+          cursor: pointer;
+          font-size: 0.7rem;
+          text-decoration: none;
+        }
+
+        .ext-popup-button-link-secondary:hover {
+          color: #ffd654;
+        }
+
+        .ext-popup-button-main {
+          color: #191919;
+          background-color: #ffd654;
+          padding: 5px 10px;
+          border-radius: 4px;
+          font-weight: bold;
+          cursor: pointer;
+          display: inline-block;
+          text-decoration: none;
+        }
+
+        .ext-popup-button-secondary {
+          color: #d7dce3;
+          background-color: #464b52;
+          padding: 5px 10px;
+          border-radius: 4px;
+          font-weight: bold;
+          cursor: pointer;
+          display: inline-block;
+          text-decoration: none;
+        }
+
+        .ext-popup-button-danger {
+          color: #f85246;
+          background-color: transparent;
+          border: 1px solid #f85246;
+          padding: 5px 10px;
+          border-radius: 4px;
+          font-weight: bold;
+          cursor: pointer;
+          display: inline-block;
+          text-decoration: none;
+        }
+
+        .ext-popup-button-main:hover {
+          color: #191919;
+          background-color: #fff388;
+        }
+
+        .ext-popup-button-secondary:hover {
+          color: #d7dce3;
+          background-color: #5d6773;
+        }
+
+        .ext-popup-button-danger:hover {
+          color: #191919;
+          background-color: #f85246;
+        }
+
+        #gitduck-browser-extension-root {
+          pointer-events: none;
+          position: fixed;
+          z-index: 99999999999999;
+        }
+
+        .mr {
+          margin-right: 10px;
+        }
+
+        .replayer-mouse {
+          position: absolute;
+          width: 20px;
+          height: 20px;
+          transition: 0.05s linear;
+          background-size: contain;
+          background-position: center center;
+          background-repeat: no-repeat;
+        }
+
+        .guest-cursors-label {
+          position: absolute;
+          margin-left: 10px;
+          color: white;
+          max-width: 20em;
+          text-overflow: ellipsis;
+          background-color: #3e8aff;
+          border-radius: 4px;
+          padding: 3px 4px;
+          font-size: 11px;
+          margin-top: 15px;
+          white-space: nowrap;
+          font-family: sans-serif !important;
+          line-height: 13px;
+        }
+
+        .font-replayer-mouse {
+          color: #3e8aff;
+          -webkit-transform: rotate(-135deg);
+          -moz-transform: rotate(-135deg);
+          -o-transform: rotate(-135deg);
+          -ms-transform: rotate(-135deg);
+          transform: rotate(-135deg);
+          margin-top: -7px;
+          margin-left: -8px;
+          margin-right: 9px;
+        }
+
+        .font-replayer-container .guest-cursors-label {
+          margin-top: 0px;
+        }
+
+        .ext-modal-drag {
+          box-shadow: 0px 4px 10px 0px rgba(0, 0, 0, 0.7);
+          cursor: move;
+        }
+      </style>
+      <div id="gitduck-browser-extension-root"></div
+    ></template>
+  </div>
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0, shrink-to-fit=no"
+    />
+    <meta
+      name="description"
+      content="TIP TOP menyediakan keperluan harian Anda selengkap dan semurah mungkin. Untuk menambah keanekaragaman produk, disamping menjual kebutuhan rumah tangga Anda, TIP TOP juga menyediakan kebutuhan busana, elektronik, pecah belah, olah raga dan furniture"
+    />
+    <meta
+      name="keywords"
+      content="Ecommerce, online tiptop, tiptop supermarket"
+    />
+    <meta name="robots" content="all,index,follow" />
+    <meta property="article:publisher" content="https://shop.tiptop.co.id" />
+    <meta property="og:url" content="https://shop.tiptop.co.id" />
+    <meta property="og:title" content="Tip Top Online shop" />
+    <meta property="og:site_name" content="tiptop" />
+    <meta property="og:type" content="article" />
+    <meta
+      property="og:image"
+      content="https://shop.tiptop.co.id/images/logo-tiptop.png"
+    />
+    <meta
+      property="og:description"
+      content="TIP TOP menyediakan keperluan harian Anda selengkap dan semurah mungkin. Untuk menambah keanekaragaman produk, disamping menjual kebutuhan rumah tangga Anda, TIP TOP juga menyediakan kebutuhan busana, elektronik, pecah belah, olah raga dan furniture"
+    />
+    <meta property="og:image:width" content="300" />
+    <meta property="og:image:height" content="200" />
+
+    <link
+      rel="stylesheet"
+      href="./Tip Top Online Shop 2024-10-30_files/all.min.css"
+      integrity="sha512-u7ppO4TLg4v6EY8yQ6T6d66inT0daGyTodAi6ycbw9+/AU8KMLAF7Z7YGKPMRA96v7t+c7O1s6YCTGkok6p9ZA=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="96x96"
+      href="https://shop.tiptop.co.id/images/favicon.png"
+    />
+
+    <title>Tip Top Online Shop</title>
+    <script
+      src="./Tip Top Online Shop 2024-10-30_files/client"
+      defer=""
+    ></script>
+
+    <!-- FONTS -->
+    <link
+      rel="stylesheet"
+      href="./Tip Top Online Shop 2024-10-30_files/flaticon.css"
+    />
+    <link
+      rel="stylesheet"
+      href="./Tip Top Online Shop 2024-10-30_files/icofont.min.css"
+    />
+    <link
+      rel="stylesheet"
+      href="./Tip Top Online Shop 2024-10-30_files/fontawesome.min.css"
+    />
+
+    <!-- VENDOR -->
+    <link
+      rel="stylesheet"
+      href="./Tip Top Online Shop 2024-10-30_files/venobox.min.css"
+    />
+    <link
+      rel="stylesheet"
+      href="./Tip Top Online Shop 2024-10-30_files/slick.min.css"
+    />
+    <link
+      rel="stylesheet"
+      href="./Tip Top Online Shop 2024-10-30_files/nice-select.min.css"
+    />
+    <link
+      rel="stylesheet"
+      href="./Tip Top Online Shop 2024-10-30_files/bootstrap.min.css"
+    />
+
+    <!-- CUSTOM -->
+    <link
+      rel="stylesheet"
+      href="./Tip Top Online Shop 2024-10-30_files/main2.css"
+    />
+    <link
+      rel="stylesheet"
+      href="./Tip Top Online Shop 2024-10-30_files/custom.css"
+    />
+
+    <link
+      rel="stylesheet"
+      href="./Tip Top Online Shop 2024-10-30_files/home-category.css"
+    />
+    <link
+      rel="stylesheet"
+      href="./Tip Top Online Shop 2024-10-30_files/product-detail1.css"
+    />
+
+    <!--=====================================
+                    CSS LINK PART END
+        =======================================-->
+    <style>
+      body {
+        font-family: "Muli";
+        font-size: 22px;
+      }
+    </style>
+    <!-- Google tag (gtag.js) -->
+    <script
+      async=""
+      src="https://www.googletagmanager.com/gtag/js?id=AW-11450763412"
+    ></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag() {
+        dataLayer.push(arguments);
+      }
+      gtag("js", new Date());
+
+      gtag("config", "AW-11450763412");
+    </script>
+  </head>
+
+  <body style="overflow: inherit">
+    <div data-v-6bd6a1c7="">
+      <div data-v-6bd6a1c7="">
+        <div class="backdrop"></div>
+        <a href="javascript:void(0)" class="backtop fas fa-arrow-up"></a>
+        <div class="header-top">
+          <div class="container">
+            <div class="row">
+              <div class="col-md-12">
+                <div class="header-top-select">
+                  <div class="header-select">
+                    <i class="fas fa-store"></i>
+                    <span style="color: white; font-size: 14px; cursor: pointer"
+                      >Pilih Outlet
+                    </span>
+                  </div>
+                </div>
+              </div>
+              <div class="col-md-7 col-lg-4 header-register-mobile">
+                <ul class="header-top-list"></ul>
+              </div>
+            </div>
+          </div>
+        </div>
+        <header class="header-part">
+          <div class="container">
+            <div class="header-content">
+              <div class="header-media-group">
+                <button class="header-user">
+                  <img
+                    src="./Tip Top Online Shop 2024-10-30_files/user.png"
+                    alt=""
+                  />
+                </button>
+                <a href="https://shop.tiptop.co.id/outlet/Pondok-Bambu" class=""
+                  ><img
+                    src="./Tip Top Online Shop 2024-10-30_files/logo-tiptop.png"
+                    alt="logo"
+                    class="img-fluid logo-mobile"
+                  /><span class="back" style="color: black"
+                    >Pondok Bambu</span
+                  ></a
+                >
+              </div>
+              <a
+                href="https://shop.tiptop.co.id/outlet/Pondok-Bambu"
+                class="header-logo"
+                ><img
+                  src="./Tip Top Online Shop 2024-10-30_files/logo-tiptop.png"
+                  alt="logo"
+                />Pondok Bambu
+              </a>
+              <div class="header-form-search header-form active">
+                <input type="text" placeholder="Mau beli apa hari ini ?" />
+                <button><i class="fas fa-search"></i></button>
+                <!---->
+              </div>
+              <div class="header-widget-group">
+                <a
+                  href="javascript:void(0)"
+                  title="Daftar Keinginan"
+                  class="header-widget"
+                  ><i class="fas fa-heart"></i> <sup>1</sup></a
+                >
+                <button title="Cartlist" class="header-widget header-cart">
+                  <i class="fas fa-shopping-basket"></i>
+                  <!---->
+                </button>
+                <a
+                  href="javascript:void(0)"
+                  title="Djojo Soeharto"
+                  class="header-widget"
+                  ><img
+                    src="./Tip Top Online Shop 2024-10-30_files/user.png"
+                    alt=""
+                  />
+                  <span>Djojo Soeharto</span></a
+                >
+              </div>
+            </div>
+          </div>
+        </header>
+        <aside class="category-sidebar">
+          <div class="category-header">
+            <h4 class="category-title">
+              <i class="fas fa-align-left"></i> <span>Kategori</span>
+            </h4>
+            <button class="category-close">
+              <i class="icofont-close"></i>
+            </button>
+          </div>
+          <ul class="category-list">
+            <li class="category-item">
+              <a href="javascript:void(0)" class="category-link"
+                ><img
+                  src="./Tip Top Online Shop 2024-10-30_files/promo-category.png"
+                  height="30"
+                  width="50"
+                  alt=""
+                />
+                <span>Promo</span></a
+              >
+            </li>
+            <li class="category-item">
+              <a href="javascript:void(0)" class="category-link"
+                ><img
+                  src="./Tip Top Online Shop 2024-10-30_files/dapur.png"
+                  height="30"
+                  width="50"
+                  alt=""
+                />
+                <span>Keperluan Dapur</span></a
+              >
+            </li>
+            <li class="category-item">
+              <a href="javascript:void(0)" class="category-link"
+                ><img
+                  src="./Tip Top Online Shop 2024-10-30_files/susu-olahan-telor.png"
+                  height="30"
+                  width="50"
+                  alt=""
+                />
+                <span>Susu, Olahan &amp;Telur</span></a
+              >
+            </li>
+            <li class="category-item">
+              <a href="javascript:void(0)" class="category-link"
+                ><img
+                  src="./Tip Top Online Shop 2024-10-30_files/minuman.png"
+                  height="30"
+                  width="50"
+                  alt=""
+                />
+                <span>Minuman</span></a
+              >
+            </li>
+            <li class="category-item">
+              <a href="javascript:void(0)" class="category-link"
+                ><img
+                  src="./Tip Top Online Shop 2024-10-30_files/kebutuhan-bayi.png"
+                  height="30"
+                  width="50"
+                  alt=""
+                />
+                <span>Kebutuhan Bayi &amp; Anak</span></a
+              >
+            </li>
+            <li class="category-item">
+              <a href="javascript:void(0)" class="category-link"
+                ><img
+                  src="./Tip Top Online Shop 2024-10-30_files/mie-beras-pasta-roti.png"
+                  height="30"
+                  width="50"
+                  alt=""
+                />
+                <span>Mie, Beras ,Pasta, Roti</span></a
+              >
+            </li>
+            <li class="category-item">
+              <a href="javascript:void(0)" class="category-link"
+                ><img
+                  src="./Tip Top Online Shop 2024-10-30_files/perawatan-kecantikan.png"
+                  height="30"
+                  width="50"
+                  alt=""
+                />
+                <span>Perawatan &amp; Kecantikan</span></a
+              >
+            </li>
+            <li class="category-item">
+              <a href="javascript:void(0)" class="category-link"
+                ><img
+                  src="./Tip Top Online Shop 2024-10-30_files/sayur-buah.png"
+                  height="30"
+                  width="50"
+                  alt=""
+                />
+                <span>Sayur &amp; Buah</span></a
+              >
+            </li>
+            <li class="category-item">
+              <a href="javascript:void(0)" class="category-link"
+                ><img
+                  src="./Tip Top Online Shop 2024-10-30_files/daging-makanan-laut.png"
+                  height="30"
+                  width="50"
+                  alt=""
+                />
+                <span>Daging &amp; Makanan Laut</span></a
+              >
+            </li>
+            <li class="category-item">
+              <a href="javascript:void(0)" class="category-link"
+                ><img
+                  src="./Tip Top Online Shop 2024-10-30_files/snack.png"
+                  height="30"
+                  width="50"
+                  alt=""
+                />
+                <span>Snack/Makanan Ringan</span></a
+              >
+            </li>
+            <li class="category-item">
+              <a href="javascript:void(0)" class="category-link"
+                ><img
+                  src="./Tip Top Online Shop 2024-10-30_files/produk-beku.png"
+                  height="30"
+                  width="50"
+                  alt=""
+                />
+                <span>Produk Beku</span></a
+              >
+            </li>
+            <li class="category-item">
+              <a href="javascript:void(0)" class="category-link"
+                ><img
+                  src="./Tip Top Online Shop 2024-10-30_files/peralatan-rumah-tangga.png"
+                  height="30"
+                  width="50"
+                  alt=""
+                />
+                <span>Peralatan Rumah Tangga</span></a
+              >
+            </li>
+            <li class="category-item">
+              <a href="javascript:void(0)" class="category-link"
+                ><img
+                  src="./Tip Top Online Shop 2024-10-30_files/kesehatan-kebugaran.png"
+                  height="30"
+                  width="50"
+                  alt=""
+                />
+                <span>Kesehatan &amp; Kebugaran</span></a
+              >
+            </li>
+            <li class="category-item">
+              <a href="javascript:void(0)" class="category-link"
+                ><img
+                  src="./Tip Top Online Shop 2024-10-30_files/kosmetik.png"
+                  height="30"
+                  width="50"
+                  alt=""
+                />
+                <span>Kosmetik</span></a
+              >
+            </li>
+            <li class="category-item">
+              <a href="javascript:void(0)" class="category-link"
+                ><img
+                  src="./Tip Top Online Shop 2024-10-30_files/perlengkapan-hewan.png"
+                  height="30"
+                  width="50"
+                  alt=""
+                />
+                <span>Perlengkapan Hewan</span></a
+              >
+            </li>
+            <li class="category-item">
+              <a href="javascript:void(0)" class="category-link"
+                ><img
+                  src="./Tip Top Online Shop 2024-10-30_files/automotive.png"
+                  height="30"
+                  width="50"
+                  alt=""
+                />
+                <span>Automotive</span></a
+              >
+            </li>
+            <li class="category-item">
+              <a href="javascript:void(0)" class="category-link"
+                ><img
+                  src="./Tip Top Online Shop 2024-10-30_files/parsel.png"
+                  height="30"
+                  width="50"
+                  alt=""
+                />
+                <span>Parsel</span></a
+              >
+            </li>
+          </ul>
+        </aside>
+        <aside class="cart-sidebar">
+          <div class="cart-header">
+            <div class="cart-total">
+              <i class="fas fa-shopping-basket"></i>
+              <span>total Keranjang (0)</span>
+            </div>
+            <button class="cart-close"><i class="icofont-close"></i></button>
+          </div>
+          <ul class="cart-list"></ul>
+          <!---->
+        </aside>
+        <aside class="nav-sidebar">
+          <div class="nav-content">
+            <div class="nav-profile">
+              <a href="javascript:void(0)" class="nav-user"
+                ><img
+                  src="./Tip Top Online Shop 2024-10-30_files/user.png"
+                  alt=""
+              /></a>
+              <h4 class="nav-name">
+                <a href="javascript:void(0)"> Djojo Soeharto</a>
+              </h4>
+            </div>
+            <ul class="nav-list">
+              <li>
+                <a
+                  href="https://shop.tiptop.co.id/outlet/Pondok-Bambu"
+                  class="nav-link"
+                  ><i class="icofont-home"></i>Home</a
+                >
+              </li>
+              <li>
+                <a href="javascript:void(0)" class="nav-link cate-btn-menu"
+                  ><i class="fas fa-list"></i>Kategori</a
+                >
+              </li>
+              <li>
+                <a href="javascript:void(0)" class="nav-link cart-btn-menu"
+                  ><i class="fas fa-shopping-basket"></i>Keranjang</a
+                >
+              </li>
+              <li>
+                <a href="javascript:void(0)" class="nav-link"
+                  ><i class="fas fa-tags"></i>Promo</a
+                >
+              </li>
+              <li>
+                <a href="javascript:void(0)" class="nav-link dropdown-link"
+                  ><i class="icofont-ui-user"></i>Akun Saya</a
+                >
+                <ul class="dropdown-list">
+                  <li><a href="javascript:void(0)">Profile</a></li>
+                  <li><a href="javascript:void(0)">Pesanan</a></li>
+                  <li><a href="javascript:void(0)">Daftar Keinginan</a></li>
+                </ul>
+              </li>
+              <li>
+                <a href="javascript:void(0)" class="nav-link"
+                  ><i class="icofont-logout"></i>logout</a
+                >
+              </li>
+            </ul>
+            <div class="nav-info-group">
+              <div class="nav-info">
+                <i class="icofont-ui-touch-phone"></i>
+                <p><small>Hubungi Kami</small> <span>0813 1913 4818</span></p>
+              </div>
+              <div class="nav-info">
+                <i class="icofont-ui-email"></i>
+                <p>
+                  <small>email</small> <span>customerservice@tiptop.co.id</span>
+                </p>
+              </div>
+            </div>
+            <div class="nav-footer">
+              <p>
+                © Powered by
+                <a href="https://tiptop.co.id/" target="_blank">Tip Top</a>
+              </p>
+            </div>
+          </div>
+        </aside>
+        <div class="mobile-menu">
+          <a
+            href="https://shop.tiptop.co.id/outlet/Pondok-Bambu"
+            class=""
+            title="Home"
+            ><i class="fas fa-home"></i> <span>Home</span></a
+          >
+          <button title="Kategori" class="cate-btn">
+            <i class="fas fa-list"></i> <span>Kategori</span>
+          </button>
+          <button title="Keranjang" class="cart-btn">
+            <i class="fas fa-shopping-basket"></i> <span>Keranjang</span>
+            <!---->
+          </button>
+          <a
+            href="https://shop.tiptop.co.id/outlet/Pondok-Bambu/promo"
+            class=""
+            title="Promo"
+            ><i class="fas fa-tags"></i> <span>Promo</span></a
+          >
+          <a href="https://shop.tiptop.co.id/profile" class="" title="profile"
+            ><i class="fas fa-user"></i> <span>Akun</span></a
+          >
+        </div>
+        <div data-v-4caf91ff="" class="modal" style="display: none">
+          <div data-v-4caf91ff="" class="modal-dialog modal-lg">
+            <div data-v-4caf91ff="" class="modal-content">
+              <button data-v-4caf91ff="" class="modal-close">
+                <i data-v-4caf91ff="" class="icofont-close"></i>
+              </button>
+              <form data-v-4caf91ff="" class="modal-form modal-store">
+                <div data-v-4caf91ff="" class="row">
+                  <div
+                    data-v-4caf91ff=""
+                    class="col-12"
+                    style="padding-right: 40px"
+                  >
+                    <h5 data-v-4caf91ff="" class="text-center fw-bold">
+                      Pilih Outlet
+                    </h5>
+                    <br data-v-4caf91ff="" />
+                    <h6 data-v-4caf91ff="" class="text-center fw-bold">
+                      Radius pengiriman Max 10 KM dari Tip Top Supermarket
+                    </h6>
+                    <h6
+                      data-v-4caf91ff=""
+                      class="text-danger fw-bold text-center"
+                    >
+                      Keranjang anda akan dihapus ketika mengganti Outlet
+                    </h6>
+                  </div>
+                </div>
+                <div data-v-4caf91ff="" class="container">
+                  <div
+                    data-v-4caf91ff=""
+                    class="row"
+                    style="margin-right: 10px"
+                  >
+                    <div
+                      data-v-4caf91ff=""
+                      class="col-6 col-sm-4 col-md-4 mt-2 justify-content-center"
+                    >
+                      <div data-v-4caf91ff="" class="card card-store">
+                        <img
+                          data-v-4caf91ff=""
+                          src="./Tip Top Online Shop 2024-10-30_files/rawamangun.jpeg"
+                          alt=""
+                          class="card-img-top"
+                          style="height: 200px"
+                        />
+                        <div data-v-4caf91ff="" class="card-body">
+                          <span data-v-4caf91ff="" class="card-text-store"
+                            >Rawamangun</span
+                          >
+                        </div>
+                      </div>
+                    </div>
+                    <div
+                      data-v-4caf91ff=""
+                      class="col-6 col-sm-4 col-md-4 mt-2 justify-content-center"
+                    >
+                      <div data-v-4caf91ff="" class="card card-store">
+                        <img
+                          data-v-4caf91ff=""
+                          src="./Tip Top Online Shop 2024-10-30_files/pondok-bambu.jpg"
+                          alt=""
+                          class="card-img-top"
+                          style="height: 200px"
+                        />
+                        <div data-v-4caf91ff="" class="card-body">
+                          <span data-v-4caf91ff="" class="card-text-store"
+                            >Pondok Bambu</span
+                          >
+                        </div>
+                      </div>
+                    </div>
+                    <div
+                      data-v-4caf91ff=""
+                      class="col-6 col-sm-4 col-md-4 mt-2 justify-content-center"
+                    >
+                      <div data-v-4caf91ff="" class="card card-store">
+                        <img
+                          data-v-4caf91ff=""
+                          src="./Tip Top Online Shop 2024-10-30_files/ciputat.jpeg"
+                          alt=""
+                          class="card-img-top"
+                          style="height: 200px"
+                        />
+                        <div data-v-4caf91ff="" class="card-body">
+                          <span data-v-4caf91ff="" class="card-text-store"
+                            >Ciputat</span
+                          >
+                        </div>
+                      </div>
+                    </div>
+                    <div
+                      data-v-4caf91ff=""
+                      class="col-6 col-sm-4 col-md-4 mt-2 justify-content-center"
+                    >
+                      <div data-v-4caf91ff="" class="card card-store">
+                        <img
+                          data-v-4caf91ff=""
+                          src="./Tip Top Online Shop 2024-10-30_files/depok.jpeg"
+                          alt=""
+                          class="card-img-top"
+                          style="height: 200px"
+                        />
+                        <div data-v-4caf91ff="" class="card-body">
+                          <span data-v-4caf91ff="" class="card-text-store"
+                            >Depok</span
+                          >
+                        </div>
+                      </div>
+                    </div>
+                    <div
+                      data-v-4caf91ff=""
+                      class="col-6 col-sm-4 col-md-4 mt-2 justify-content-center"
+                    >
+                      <div data-v-4caf91ff="" class="card card-store">
+                        <img
+                          data-v-4caf91ff=""
+                          src="./Tip Top Online Shop 2024-10-30_files/pondok-gede.jpeg"
+                          alt=""
+                          class="card-img-top"
+                          style="height: 200px"
+                        />
+                        <div data-v-4caf91ff="" class="card-body">
+                          <span data-v-4caf91ff="" class="card-text-store"
+                            >Pondok Gede</span
+                          >
+                        </div>
+                      </div>
+                    </div>
+                    <div
+                      data-v-4caf91ff=""
+                      class="col-6 col-sm-4 col-md-4 mt-2 justify-content-center"
+                    >
+                      <div data-v-4caf91ff="" class="card card-store">
+                        <img
+                          data-v-4caf91ff=""
+                          src="./Tip Top Online Shop 2024-10-30_files/tambun.jpeg"
+                          alt=""
+                          class="card-img-top"
+                          style="height: 200px"
+                        />
+                        <div data-v-4caf91ff="" class="card-body">
+                          <span data-v-4caf91ff="" class="card-text-store"
+                            >Tambun</span
+                          >
+                        </div>
+                      </div>
+                    </div>
+                    <div
+                      data-v-4caf91ff=""
+                      class="col-6 col-sm-4 col-md-4 mt-2 justify-content-center"
+                    >
+                      <div data-v-4caf91ff="" class="card card-store">
+                        <img
+                          data-v-4caf91ff=""
+                          src="./Tip Top Online Shop 2024-10-30_files/bogor.jpeg"
+                          alt=""
+                          class="card-img-top"
+                          style="height: 200px"
+                        />
+                        <div data-v-4caf91ff="" class="card-body">
+                          <span data-v-4caf91ff="" class="card-text-store"
+                            >Bogor</span
+                          >
+                        </div>
+                      </div>
+                    </div>
+                    <div
+                      data-v-4caf91ff=""
+                      class="col-6 col-sm-4 col-md-4 mt-2 justify-content-center"
+                    >
+                      <div data-v-4caf91ff="" class="card card-store">
+                        <img
+                          data-v-4caf91ff=""
+                          src="./Tip Top Online Shop 2024-10-30_files/cimone.jpeg"
+                          alt=""
+                          class="card-img-top"
+                          style="height: 200px"
+                        />
+                        <div data-v-4caf91ff="" class="card-body">
+                          <span data-v-4caf91ff="" class="card-text-store"
+                            >Cimone</span
+                          >
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+      <br data-v-6bd6a1c7="" /><br data-v-6bd6a1c7="" />
+      <section data-v-6bd6a1c7="" class="inner-section invoice-part">
+        <div data-v-6bd6a1c7="" class="container">
+          <div data-v-6bd6a1c7="" class="row">
+            <div data-v-6bd6a1c7="" class="col-12">
+              <div data-v-6bd6a1c7="" class="alert-info">
+                <p
+                  data-v-6bd6a1c7=""
+                  class="confirm-checkout"
+                  style="text-align: center"
+                >
+                  Orderan anda sudah kami terima dan akan kami proses sesuai
+                  urutan order yang masuk. Mohon sabar menunggu,
+                  <br data-v-6bd6a1c7="" />Staff kami akan menghubungi anda
+                  apabila kami sudah siap untuk membelanjakan barang-barang
+                  anda. Terima Kasih
+                </p>
+              </div>
+            </div>
+            <div data-v-6bd6a1c7="" class="col-12 col-md-6 col-lg-6 col-xl-6">
+              <div data-v-6bd6a1c7="" class="account-card">
+                <div data-v-6bd6a1c7="" class="account-title">
+                  <h4 data-v-6bd6a1c7="">Pesanan Diterima</h4>
+                </div>
+                <div data-v-6bd6a1c7="" class="account-content">
+                  <div data-v-6bd6a1c7="" class="invoice-recieved">
+                    <h6 data-v-6bd6a1c7="">
+                      No Invoice
+                      <span data-v-6bd6a1c7="" class="text-green"
+                        >41-3010-32</span
+                      >
+                    </h6>
+                    <h6 data-v-6bd6a1c7="">
+                      Tanggal Pesanan
+                      <span data-v-6bd6a1c7="" class="text-green"
+                        >Rabu, 23 Oktober 2024 pukul 12.34</span
+                      >
+                    </h6>
+                    <h6 data-v-6bd6a1c7="">
+                      Outlet
+                      <span data-v-6bd6a1c7="" class="text-green"
+                        >Pondok Bambu</span
+                      >
+                    </h6>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div data-v-6bd6a1c7="" class="col-12 col-md-6 col-lg-6 col-xl-6">
+              <div data-v-6bd6a1c7="" class="account-card">
+                <div data-v-6bd6a1c7="" class="account-title">
+                  <h4 data-v-6bd6a1c7="">Alamat Kirim</h4>
+                </div>
+                <div data-v-6bd6a1c7="" class="account-content">
+                  <div data-v-6bd6a1c7="" class="invoice-recieved">
+                    <h6 data-v-6bd6a1c7="">
+                      Penerima
+                      <span data-v-6bd6a1c7="" class="text-green"
+                        >Djojo S.</span
+                      >
+                    </h6>
+                    <h6 data-v-6bd6a1c7="">
+                      Alamat
+                      <span data-v-6bd6a1c7="" class="text-green">
+                        Komplek Pondok Kelapa Sawit Blok AD No 17. Sebrang SDN 03 Duren Sawit.
+                      </span>
+                    </h6>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div data-v-6bd6a1c7="" class="col-lg-6">
+              <div data-v-6bd6a1c7="" class="account-card">
+                <div data-v-6bd6a1c7="" class="account-title">
+                  <h4 data-v-6bd6a1c7="">Order Detail</h4>
+                </div>
+                <div data-v-6bd6a1c7="" class="account-content">
+                  <ul data-v-6bd6a1c7="" class="invoice-details">
+                    <li data-v-6bd6a1c7="">
+                      <h6 data-v-6bd6a1c7="">Total Item</h6>
+                      <p data-v-6bd6a1c7="">6</p>
+                    </li>
+                    <li data-v-6bd6a1c7="">
+                      <h6 data-v-6bd6a1c7="">Total Kuantiti</h6>
+                      <p data-v-6bd6a1c7="">9</p>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+            <div data-v-6bd6a1c7="" class="col-lg-6">
+              <div data-v-6bd6a1c7="" class="account-card">
+                <div data-v-6bd6a1c7="" class="account-title">
+                  <h4 data-v-6bd6a1c7="">Rincian Pembayaran</h4>
+                </div>
+                <div data-v-6bd6a1c7="" class="account-content">
+                  <ul data-v-6bd6a1c7="" class="invoice-details">
+                    <li data-v-6bd6a1c7="">
+                      <h6 data-v-6bd6a1c7="">Total</h6>
+                      <p data-v-6bd6a1c7="">Rp 389,350</p>
+                    </li>
+                    <li data-v-6bd6a1c7="">
+                      <h6 data-v-6bd6a1c7="">Ongkos Kirim</h6>
+                      <p data-v-6bd6a1c7="">Rp 20,000</p>
+                    </li>
+                    <li data-v-6bd6a1c7="">
+                      <h6 data-v-6bd6a1c7="">Total Bayar</h6>
+                      <p data-v-6bd6a1c7="" class="text-danger">Rp 409,350</p>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+            <div data-v-6bd6a1c7="" class="col-lg-12">
+              <div data-v-6bd6a1c7="" class="table-scroll">
+                <table data-v-6bd6a1c7="" class="table-list">
+                  <thead data-v-6bd6a1c7="">
+                    <tr data-v-6bd6a1c7="">
+                      <th data-v-6bd6a1c7="" scope="col">No</th>
+                      <th data-v-6bd6a1c7="" scope="col">Produk</th>
+                      <th data-v-6bd6a1c7="" scope="col">Nama</th>
+                      <th data-v-6bd6a1c7="" scope="col">Berat</th>
+                      <th data-v-6bd6a1c7="" scope="col">Harga</th>
+                      <th data-v-6bd6a1c7="" scope="col">Jumlah</th>
+                      <th data-v-6bd6a1c7="" scope="col">Total</th>
+                    </tr>
+                  </thead>
+                  <tbody data-v-6bd6a1c7="">
+                    <tr data-v-6bd6a1c7="">
+                      <td data-v-6bd6a1c7=""><h6 data-v-6bd6a1c7="">1</h6></td>
+                      <td data-v-6bd6a1c7="" class="table-image">
+                        <img
+                          data-v-6bd6a1c7=""
+                          src="./Tip Top Online Shop 2024-10-30_files/00547090105a.jpg"
+                          alt=""
+                        />
+                      </td>
+                      <td data-v-6bd6a1c7="">
+                        <h6 data-v-6bd6a1c7="">WIPOL KARBOL PEMBERSIH LANTAI CEMARA REFILL</h6>
+                      </td>
+                      <td data-v-6bd6a1c7="">
+                        <h6 data-v-6bd6a1c7="">1500ML</h6>
+                      </td>
+                      <td data-v-6bd6a1c7="" class="table-price">
+                        <h6 data-v-6bd6a1c7="" class="text-green">Rp 25,900</h6>
+                      </td>
+                      <td data-v-6bd6a1c7="" class="table-brand">
+                        <h6 data-v-6bd6a1c7="">1</h6>
+                      </td>
+                      <td data-v-6bd6a1c7="" class="table-quantity">
+                        <h6 data-v-6bd6a1c7="">Rp 25,900</h6>
+                      </td>
+                    </tr>
+                    <tr data-v-6bd6a1c7="">
+                      <td data-v-6bd6a1c7=""><h6 data-v-6bd6a1c7="">2</h6></td>
+                      <td data-v-6bd6a1c7="" class="table-image">
+                        <img
+                          data-v-6bd6a1c7=""
+                          src="./Tip Top Online Shop 2024-10-30_files/01132850101a.jpg"
+                          alt=""
+                        />
+                      </td>
+                      <td data-v-6bd6a1c7="">
+                        <h6 data-v-6bd6a1c7="">NUTRILON RYL A.DBIO 4 VNL TIN</h6>
+                      </td>
+                      <td data-v-6bd6a1c7="">
+                        <h6 data-v-6bd6a1c7="">800GR</h6>
+                      </td>
+                      <td data-v-6bd6a1c7="" class="table-price">
+                        <h6 data-v-6bd6a1c7="" class="text-green">
+                          Rp 182,375
+                        </h6>
+                      </td>
+                      <td data-v-6bd6a1c7="" class="table-brand">
+                        <h6 data-v-6bd6a1c7="">1</h6>
+                      </td>
+                      <td data-v-6bd6a1c7="" class="table-quantity">
+                        <h6 data-v-6bd6a1c7="">Rp 182,375</h6>
+                      </td>
+                    </tr>
+                    <tr data-v-6bd6a1c7="">
+                      <td data-v-6bd6a1c7=""><h6 data-v-6bd6a1c7="">3</h6></td>
+                      <td data-v-6bd6a1c7="" class="table-image">
+                        <img
+                          data-v-6bd6a1c7=""
+                          src="./Tip Top Online Shop 2024-10-30_files/00236300102a.jpg"
+                          alt=""
+                        />
+                      </td>
+                      <td data-v-6bd6a1c7="">
+                        <h6 data-v-6bd6a1c7="">LA FONTE PRONTO MACARONI WITH CHEESE FLAVOUR</h6>
+                      </td>
+                      <td data-v-6bd6a1c7="">
+                        <h6 data-v-6bd6a1c7="">63GR</h6>
+                      </td>
+                      <td data-v-6bd6a1c7="" class="table-price">
+                        <h6 data-v-6bd6a1c7="" class="text-green">Rp 5,150</h6>
+                      </td>
+                      <td data-v-6bd6a1c7="" class="table-brand">
+                        <h6 data-v-6bd6a1c7="">2</h6>
+                      </td>
+                      <td data-v-6bd6a1c7="" class="table-quantity">
+                        <h6 data-v-6bd6a1c7="">Rp 10,300</h6>
+                      </td>
+                    </tr>
+                    <tr data-v-6bd6a1c7="">
+                      <td data-v-6bd6a1c7=""><h6 data-v-6bd6a1c7="">4</h6></td>
+                      <td data-v-6bd6a1c7="" class="table-image">
+                        <img
+                          data-v-6bd6a1c7=""
+                          src="./Tip Top Online Shop 2024-10-30_files/00459910101a.jpg"
+                          alt=""
+                        />
+                      </td>
+                      <td data-v-6bd6a1c7="">
+                        <h6 data-v-6bd6a1c7="">SAN REMO MACARONI</h6>
+                      </td>
+                      <td data-v-6bd6a1c7="">
+                        <h6 data-v-6bd6a1c7="">500GR</h6>
+                      </td>
+                      <td data-v-6bd6a1c7="" class="table-price">
+                        <h6 data-v-6bd6a1c7="" class="text-green">Rp 26,325</h6>
+                      </td>
+                      <td data-v-6bd6a1c7="" class="table-brand">
+                        <h6 data-v-6bd6a1c7="">2</h6>
+                      </td>
+                      <td data-v-6bd6a1c7="" class="table-quantity">
+                        <h6 data-v-6bd6a1c7="">Rp 52,650</h6>
+                      </td>
+                    </tr>
+                    <tr data-v-6bd6a1c7="">
+                      <td data-v-6bd6a1c7=""><h6 data-v-6bd6a1c7="">5</h6></td>
+                      <td data-v-6bd6a1c7="" class="table-image">
+                        <img
+                          data-v-6bd6a1c7=""
+                          src="./Tip Top Online Shop 2024-10-30_files/01018070101a.jpg"
+                          alt=""
+                        />
+                      </td>
+                      <td data-v-6bd6a1c7="">
+                        <h6 data-v-6bd6a1c7="">BLUE BAND MARGARINE SEBAGUNA SACHET</h6>
+                      </td>
+                      <td data-v-6bd6a1c7="">
+                        <h6 data-v-6bd6a1c7="">200GR</h6>
+                      </td>
+                      <td data-v-6bd6a1c7="" class="table-price">
+                        <h6 data-v-6bd6a1c7="" class="text-green">Rp 9,175</h6>
+                      </td>
+                      <td data-v-6bd6a1c7="" class="table-brand">
+                        <h6 data-v-6bd6a1c7="">1</h6>
+                      </td>
+                      <td data-v-6bd6a1c7="" class="table-quantity">
+                        <h6 data-v-6bd6a1c7="">Rp 9,175</h6>
+                      </td>
+                    </tr>
+                    <tr data-v-6bd6a1c7="">
+                      <td data-v-6bd6a1c7=""><h6 data-v-6bd6a1c7="">6</h6></td>
+                      <td data-v-6bd6a1c7="" class="table-image">
+                        <img
+                          data-v-6bd6a1c7=""
+                          src="./Tip Top Online Shop 2024-10-30_files/00979220102a.jpg"
+                          alt=""
+                        />
+                      </td>
+                      <td data-v-6bd6a1c7="">
+                        <h6 data-v-6bd6a1c7="">EXCELSO KOPI BIJI ARABIKA GOLD</h6>
+                      </td>
+                      <td data-v-6bd6a1c7="">
+                        <h6 data-v-6bd6a1c7="">200GR</h6>
+                      </td>
+                      <td data-v-6bd6a1c7="" class="table-price">
+                        <h6 data-v-6bd6a1c7="" class="text-green">Rp 54,475</h6>
+                      </td>
+                      <td data-v-6bd6a1c7="" class="table-brand">
+                        <h6 data-v-6bd6a1c7="">2</h6>
+                      </td>
+                      <td data-v-6bd6a1c7="" class="table-quantity">
+                        <h6 data-v-6bd6a1c7="">Rp 108,950</h6>
+                      </td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+          </div>
+          <div data-v-6bd6a1c7="" class="row">
+            <div data-v-6bd6a1c7="" class="col-lg-12 text-center mt-5">
+              <a
+                data-v-6bd6a1c7=""
+                href="https://shop.tiptop.co.id/outlet/Pondok-Bambu"
+                class="btn btn-outline-success mt-3"
+                >Kembali ke halaman utama</a
+              >
+            </div>
+          </div>
+        </div>
+      </section>
+      <footer
+        data-v-6bd6a1c7=""
+        class="footer-part"
+        style="background-color: rgb(241, 249, 244)"
+      >
+        <div class="container">
+          <div class="row">
+            <div class="col-6 col-sm-6 col-md-6 col-xl-3">
+              <div class="footer-widget">
+                Tip Top Pondok Bambu<br />
+                <p class="footer-desc">
+                  <br />
+                  Jl. Pahlawan Revolusi No.25 Pondok Bambu, Jakarta Timur
+                </p>
+                <ul class="footer-social">
+                  <li>
+                    <a
+                      href="https://www.facebook.com/TipTop.Supermarket"
+                      target="_blank"
+                      class="icofont-facebook"
+                    ></a>
+                  </li>
+                  <li>
+                    <a
+                      href="https://www.instagram.com/tiptop_ID/"
+                      target="_blank"
+                      class="icofont-instagram"
+                    ></a>
+                  </li>
+                  <li>
+                    <a
+                      href="https://www.youtube.com/channel/UCAIbHDAyY0gY5Wo0V_3S3mA/featured"
+                      target="_blank"
+                      ><i target="_blank" class="fab fa-youtube-square"></i
+                    ></a>
+                  </li>
+                  <li>
+                    <a
+                      href="https://twitter.com/tiptop_ID"
+                      target="_blank"
+                      class="icofont-twitter"
+                    ></a>
+                  </li>
+                  <li>
+                    <a
+                      href="https://www.tiktok.com/@tiptop_id"
+                      target="_blank"
+                      class="fab fa-tiktok mt-3"
+                    ></a>
+                  </li>
+                </ul>
+              </div>
+            </div>
+            <div class="col-6 col-sm-6 col-md-6 col-xl-4">
+              <div class="footer-widget contact">
+                <h3 class="footer-title">Hubungi Kami</h3>
+                <ul class="footer-contact">
+                  <li>
+                    <i class="icofont-ui-email"></i>
+                    <p>customerservice @tiptop.co.id</p>
+                  </li>
+                  <li>
+                    <i class="icofont-phone"></i>
+                    <p><span>0813 1913 4818</span></p>
+                  </li>
+                  <li>
+                    <i class="icofont-location-pin"></i>
+                    <p>
+                      Jl. Pahlawan Revolusi No.25 Pondok Bambu, Jakarta Timur
+                    </p>
+                  </li>
+                </ul>
+              </div>
+            </div>
+            <div class="col-sm-6 col-md-12 col-xl-4">
+              <div class="footer-widget">
+                <h3 class="footer-title">Informasi</h3>
+                <div class="footer-links">
+                  <ul>
+                    <li>
+                      <a
+                        href="https://www.tiptop.co.id/about-tip-top"
+                        target="_blank"
+                        >Tentang Tip Top</a
+                      >
+                    </li>
+                    <li>
+                      <a
+                        href="https://www.tiptop.co.id/store-location"
+                        target="_blank"
+                        >Lokasi Tip Top</a
+                      >
+                    </li>
+                    <li>
+                      <a
+                        href="https://www.tiptop.co.id/beriklan"
+                        target="_blank"
+                        >Beriklan
+                        <span style="text-transform: lowercase">di</span> Tip
+                        Top</a
+                      >
+                    </li>
+                    <li>
+                      <a
+                        href="https://www.tiptop.co.id/beriklan"
+                        target="_blank"
+                        >Berjualan
+                        <span style="text-transform: lowercase">di</span> Tip
+                        Top</a
+                      >
+                    </li>
+                    <li>
+                      <a href="https://www.tiptop.co.id/vacancy" target="_blank"
+                        >Lowongan Pekerjaan</a
+                      >
+                    </li>
+                    <li>
+                      <a
+                        href="https://www.tiptop.co.id/hubungi-kami"
+                        target="_blank"
+                        >Hubungi Kami</a
+                      >
+                    </li>
+                    <br />
+                  </ul>
+                  <ul>
+                    <li>
+                      <a
+                        href="https://www.tiptop.co.id/pembelian"
+                        target="_blank"
+                        >Cara Berbelanja</a
+                      >
+                    </li>
+                    <li>
+                      <a
+                        href="https://www.tiptop.co.id/pembayaran"
+                        target="_blank"
+                        >Pembayaran</a
+                      >
+                    </li>
+                    <li>
+                      <a
+                        href="https://www.tiptop.co.id/pengiriman-barang"
+                        target="_blank"
+                        >Pengantaran Barang</a
+                      >
+                    </li>
+                    <li>
+                      <a
+                        href="https://www.tiptop.co.id/pengembalian-barang"
+                        target="_blank"
+                        >Pengembalian Barang</a
+                      >
+                    </li>
+                    <li>
+                      <a
+                        href="https://assets.tiptop.co.id/Syarat_Ketentuan_Online_Shopping_Tiptop.pdf"
+                        target="_blank"
+                        >Syarat &amp; Ketentuan</a
+                      >
+                    </li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-12">
+              <div class="footer-bottom">
+                <p class="footer-copytext">
+                  © Powered by
+                  <a target="_blank" href="https://tiptop.co.id/">Tip Top</a>
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </footer>
+    </div>
+    <script
+      src="./Tip Top Online Shop 2024-10-30_files/app.js"
+      defer=""
+    ></script>
+
+    <!-- VENDOR -->
+    <script src="./Tip Top Online Shop 2024-10-30_files/jquery-1.12.4.min.js"></script>
+
+    <script src="./Tip Top Online Shop 2024-10-30_files/bootstrap.min.js"></script>
+    <script src="./Tip Top Online Shop 2024-10-30_files/countdown.min.js"></script>
+    <script src="./Tip Top Online Shop 2024-10-30_files/nice-select.min.js"></script>
+    <script src="./Tip Top Online Shop 2024-10-30_files/slick.min.js"></script>
+    <script src="./Tip Top Online Shop 2024-10-30_files/venobox.min.js"></script>
+
+    <div>
+      <div
+        class="vt-backdrop-hidden"
+        style="background-color: rgba(0, 0, 0, 0.2)"
+      ></div>
+      <div
+        class="vt-notification-container vt-center-center"
+        style="flex-direction: column-reverse"
+      ></div>
+    </div>
+  </body>
+</html>

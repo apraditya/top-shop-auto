@@ -54,11 +54,9 @@ class Tiptop:
         retries = 0
         while (retries < 3 and expect_element == None):
             retries += 1
-            print('retrying for ', retries)
 
             element = await self.browser_manager.wait_for_element(selector, { 'get_element': True })
             if (element != None):
-                print('element is still exists', element)
                 await self.browser_manager.click(selector)
                 sleep(retries)
 
