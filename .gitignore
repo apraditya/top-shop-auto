@@ -2,6 +2,10 @@
 __pycache__/
 *.py[cod]
 *$py.class
+.DS_store
+
+cart*.png
+images/tiptop_cart_*.png
 
 # C extensions
 *.so
