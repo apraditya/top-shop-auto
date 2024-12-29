@@ -25,6 +25,7 @@ class Tiptop:
 
     async def check_branch_on_page(self):
         branch_header_selector = '.header-media-group span.back'
+        await self.browser_manager.wait_for_element(branch_header_selector)
         return await self.browser_manager.get_element_text(branch_header_selector)
 
     async def type_search(self, product_name):
