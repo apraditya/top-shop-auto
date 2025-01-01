@@ -17,6 +17,5 @@ async def prepare_pyppeteer():
         sleep(5)
 
     await tt.screenshot_cart()
-    await bm.close()
 
 asyncio.run(prepare_pyppeteer())
