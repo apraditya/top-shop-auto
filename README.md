@@ -43,6 +43,16 @@ Jika berhasil, skrip akan menangkap gambar keranjang dan menyimpannya ke dalam
 folder `images`. Anda dapat menggunakan file ini untuk mengirim ke Tiptop
 Shop.
 
+## Fitur
+
+- pemasukan kembali ke keranjang barang-barang yang telah dibeli dari order
+yang telah dibuat sebelumnya.
+
+- pemasukan kembali ke keranjang barang-barang yang telah dimasukkan ke dalam
+keranjang anda. Ini berguna jika anda belum memproses keranjang anda dan masih
+ingin berdiskusi namun datanya hilang karena suatu hal, seperti browser anda
+_crash_ atau situs gagal menyimpan data anda.
+
 ## Demo
 
 Lihat demo berikut:
