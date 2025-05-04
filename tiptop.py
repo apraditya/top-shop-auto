@@ -15,7 +15,6 @@ class Tiptop:
         await self.browser_manager.click_xpath(sel_path)
         self.branch_on_page = await self.check_branch_on_page()
         self.mobile_menu = await self.browser_manager.wait_for_element('.mobile-menu', { 'get_element': True })
-        sleep(3)
 
     async def page_branch(self):
         if (self.branch_on_page == None):
@@ -41,7 +40,6 @@ class Tiptop:
 
     async def goto_product(self, product_name):
         await self.search_product(product_name)
-        sleep(5)
 
         product_card_selector = '.section.recent-part .product-card'
         product_name_selector = '.details-content .details-name'

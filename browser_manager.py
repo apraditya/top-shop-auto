@@ -1,3 +1,5 @@
+from asyncio import sleep as async_sleep
+from time import time
 from pyppeteer import launch
 
 class BrowserManager:
@@ -86,7 +88,18 @@ class BrowserManager:
         try:
             await self.page.waitForSelector(selector, options)
             if (options != None and options.get('get_element') == True):
-                return await self.get_element(selector)
+                element = await self.get_element(selector)
+                start_time = time()
+                timeout = options.get('timeout', 20) if options else 20
+                while time() - start_time < timeout:
+                    text_content = await self.page.evaluate('(el) => el.textContent', element)
+                    if text_content.strip():
+                        return element
+                    await async_sleep(0.1)  # Avoid tight loop
+                    element = await self.get_element(selector)
+                
+                return element
+                print(f'Note: Element "{selector}" may contain empty text. Retried after {timeout} seconds')
         except TimeoutError:
             print(f'Element {selector} not found')
 
