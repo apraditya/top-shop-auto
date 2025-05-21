@@ -2,6 +2,7 @@ from browser_manager import BrowserManager
 from time import sleep, strftime
 # Import Playwright's TimeoutError to catch it specifically if needed
 from playwright.async_api import async_playwright, TimeoutError as PlaywrightTimeoutError
+import asyncio # Import asyncio for asyncio.sleep
 
 class Tiptop:
     def __init__(self, branch = 'Pondok Bambu'):
@@ -52,20 +53,44 @@ class Tiptop:
 
     async def check_branch_on_page(self):
         print("check_branch_on_page: Starting...")
-        # Reverted selector back to the branch name element
+        # Selector for the element that should display the selected branch name
         branch_header_selector = '.header-content a.header-logo'
-        print(f"check_branch_page: Waiting for element: {branch_header_selector}")
-        # wait_for_element now returns a locator
-        branch_header_locator = await self.browser_manager.wait_for_element(branch_header_selector, {'timeout': 10000}) # Added timeout
-        print(f"check_branch_on_page: wait_for_element returned: {branch_header_locator}")
-        if branch_header_locator:
-             print("check_branch_on_page: Element found, getting text content.")
-             text = await branch_header_locator.text_content() # Use locator.text_content()
-             print(f"check_branch_on_page: Text content: {text}")
-             print("check_branch_on_page: Finished, returning text.")
-             return text
-        print("check_branch_on_page: Element not found, returning None.")
-        return None
+        print(f"check_branch_on_page: About to wait for element visibility: {branch_header_selector}")
+
+        # Wait for the element to be visible first
+        # This uses page.wait_for_selector(state='visible') internally
+        branch_header_locator = await self.browser_manager.wait_for_element(branch_header_selector, {'timeout': 10000}) # Wait for element visibility
+
+        if not branch_header_locator:
+            print("check_branch_on_page: Element not found after waiting for visibility, returning None.")
+            return None
+
+        print(f"check_branch_on_page: Element found. Adding a 0.1-second sleep before getting text...")
+        await asyncio.sleep(0.1) # Wait for 0.1 second to allow text content to load
+        print("check_branch_on_page: Sleep finished. Getting text content.")
+
+        # Get the text content after waiting for it to be non-empty (or after timeout)
+        try:
+            # Use locator.text_content(). This method has built-in auto-waiting for the element to be visible
+            # and have a non-empty textContent. We add a timeout here.
+            # Since we added a sleep, a shorter timeout might be sufficient, but keep 5s for safety.
+            text = await branch_header_locator.text_content(timeout=5000) # Wait up to 5 seconds for text content
+            print(f"check_branch_on_page: Got text content: '{text}'") # Print with quotes to see if it's empty
+            stripped_text = text.strip()
+            print(f"check_branch_on_page: Stripped text content: '{stripped_text}'")
+
+            if stripped_text:
+                 print("check_branch_on_page: Finished, returning stripped text.")
+                 return stripped_text
+            else:
+                 print("check_branch_on_page: Text content is empty after getting it, returning None.")
+                 return None
+        except PlaywrightTimeoutError:
+             print(f"check_branch_on_page: Timeout getting text content for '{branch_header_selector}'. Text might be empty or load slowly.")
+             return None
+        except Exception as e:
+             print(f"check_branch_on_page: An unexpected error occurred while getting text content: {e}")
+             return None
 
 
     async def type_search(self, product_name):
@@ -97,9 +122,9 @@ class Tiptop:
         # Construct a specific locator for the product card containing the name
         # Assuming the product name text is directly within or a descendant of .product-card
         # This locator will find the *specific* card for the product name
-        # Using the selector provided in the user's last message
-        product_card_locator = self.browser_manager.page.locator('.section.recent-part .product-card .product-name a', has_text=product_name).first # Use .first in case multiple match
-        print(f"goto_product: Created locator for product card with text '{product_name}'.")
+        truncated_product_name = product_name[:40]
+        product_card_locator = self.browser_manager.page.locator('.section.recent-part .product-card .product-name a', has_text=truncated_product_name).first # Use .first in case multiple match
+        print(f"goto_product: Created locator for product card with truncated text '{truncated_product_name}'.")
 
         # Selector for the element expected on the details page (e.g., the product name on the details page)
         product_name_selector_details_page = '.details-content .details-name'
@@ -128,7 +153,7 @@ class Tiptop:
                  return None
 
             print(f"retry_click: Clicking element...")
-            # --- MODIFIED: Removed force=True from the click ---
+            # Click the specific locator. Playwright automatically waits for it to be ready.
             await element_to_click_locator.click(timeout=15000) # Added click timeout
             print(f"retry_click: Click successful. Waiting for expected element '{expect_selector}'...")
 
@@ -198,10 +223,10 @@ class Tiptop:
 
             # Wait for the cart sidebar to become active as an indicator the item was processed
             # This replaces the sleep(5) in reorder.py
-            cart_sidebar_selector = '.cart-sidebar.active'
-            print(f"add_product_to_cart: Waiting for cart sidebar to become active: {cart_sidebar_selector}")
+            cart_notification_selector = '.vt-notification-container .vt-paragraph'
+            print(f"add_product_to_cart: Waiting for cart sidebar to become active: {cart_notification_selector}")
             # Use a shorter timeout here, maybe 5 seconds, as the cart should appear quickly
-            await self.browser_manager.wait_for_element(cart_sidebar_selector, { 'visible': True, 'timeout': 5000 })
+            await self.browser_manager.wait_for_element(cart_notification_selector, { 'visible': True, 'timeout': 5000 })
             print("add_product_to_cart: Cart sidebar appeared, item likely added.")
 
             # Optional: Close the product details page/modal if it's still open
