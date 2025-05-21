@@ -302,7 +302,7 @@ class Tiptop:
             cart_selector = 'button.cart-btn .fa-shopping-basket'
             print("open_cart: Using mobile cart selector.")
         else:
-            cart_selector = '.header-widget .header-cart'
+            cart_selector = '.header-widget-group .header-cart'
             print("open_cart: Using desktop cart selector.")
 
         # browser_manager.click now uses locator.click() and auto-waits
