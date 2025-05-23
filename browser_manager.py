@@ -28,17 +28,16 @@ class BrowserManager:
 
     async def screenshot(self, path, options = None):
         options = {} if options is None else options
-        options.update({'path': path})
+        # The page.screenshot method expects path as a keyword argument
+        await self.page.screenshot(path=path, **options)
 
-        await self.page.screenshot(options)
 
     async def screenshot_element(self, selector, path, options = None):
         options = {} if options is None else options
-        options.update({'path': path})
 
         # Playwright recommends locators
         locator = self.page.locator(selector)
-        await locator.screenshot(options)
+        await locator.screenshot(path=path, **options)
 
 
     async def type_text(self, selector, text):

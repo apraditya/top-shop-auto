@@ -359,8 +359,7 @@ class Tiptop:
         try:
             await self.browser_manager.screenshot_element(
                 cart_sidebar_selector, # Pass the selector to the method
-                screenshot_path,
-                { 'fullPage': False }) # fullPage=True might capture the whole page, not just the element
+                screenshot_path)
             print("screenshot_cart: Screenshot taken.")
         except Exception as e: # Catch potential errors during screenshot
             print(f"screenshot_cart: Failed to take screenshot: {e}")
