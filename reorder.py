@@ -39,6 +39,13 @@ async def prepare_order(): # Renamed function for clarity
         await tt.screenshot_cart()
         await tt.close_cart() # Close cart after screenshot
 
+        # --- Add a final await to keep the browser open ---
+        print("Script finished. Keeping browser open. Press Ctrl+C to close.")
+        await asyncio.Future() # This will keep the event loop running indefinitely
+
+    await tt.browser_manager.close()
+    print("Browser closed.")
+
 # Use asyncio.run to run the main async function
 if __name__ == "__main__":
     asyncio.run(prepare_order())
