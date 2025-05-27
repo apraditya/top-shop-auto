@@ -34,7 +34,7 @@ pipenv install
 
 3. Jalankan `pipenv run python reorder.py`.
 
-Skrip akan menjalankan browser Chrome melalui [pyppeteer](https://github.com/pyppeteer/pyppeteer)
+Skrip akan menjalankan browser Chromium melalui [playwright](https://playwright.dev/python/)
 untuk melakukan belanja online di Tiptop Shop berdasarkan barang-barang yang ada
 di file HTML. Setelah selesai, browser akan tetap terbuka untuk Anda ambil alih
 sesuai dengan kebutuhan belanja Anda.
