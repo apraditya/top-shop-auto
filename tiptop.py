@@ -65,8 +65,8 @@ class Tiptop:
             print("check_branch_on_page: Element not found after waiting for visibility, returning None.")
             return None
 
-        print(f"check_branch_on_page: Element found. Adding a 0.1-second sleep before getting text...")
-        await asyncio.sleep(0.1) # Wait for 0.1 second to allow text content to load
+        print(f"check_branch_on_page: Element found. Adding a 1.5-second sleep before getting text...")
+        await asyncio.sleep(1.3) # Wait for 1.5 second to allow text content to load
         print("check_branch_on_page: Sleep finished. Getting text content.")
 
         # Get the text content after waiting for it to be non-empty (or after timeout)
