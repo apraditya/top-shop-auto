@@ -43,6 +43,31 @@ async def prepare_order(): # Renamed function for clarity
         # Keep cart open for potential manual inspection before saving page content
         # await tt.close_cart() # Close cart after screenshot - Removed this line
 
+        # --- Add functionality to save page content ---
+        print("Saving current page content...")
+        page_content = await tt.browser_manager.get_page_content()
+
+        if page_content:
+            # Create a directory to save pages if it doesn't exist
+            save_dir = "saved_pages"
+            os.makedirs(save_dir, exist_ok=True)
+
+            # Generate a filename based on current time
+            timestamp = datetime.now().strftime("%Y%m%d_%H%M%S")
+            # Use the base name of the order file for context
+            order_file_base = os.path.splitext(os.path.basename(order_file))[0]
+            filename = os.path.join(save_dir, f"{order_file_base}_result_{timestamp}.html")
+
+            try:
+                with open(filename, "w", encoding="utf-8") as f:
+                    f.write(page_content)
+                print(f"Page content saved to {filename}")
+            except Exception as e:
+                print(f"Error saving page content to {filename}: {e}")
+        else:
+            print("Could not retrieve page content.")
+        # --- End of save page content functionality ---
+
 
         # --- Add a final await to keep the browser open ---
         print("Script finished. Keeping browser open. Press Ctrl+C to close.")

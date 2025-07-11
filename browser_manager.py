@@ -140,3 +140,19 @@ class BrowserManager:
         except PlaywrightTimeoutError:
              print(f'Element {selector} not found or clickable within timeout')
              raise # Re-raise the exception if click fails after waiting
+
+    async def get_page_content(self):
+        """Retrieves the full HTML content of the current page."""
+        if self.page:
+            print("Retrieving page content...")
+            try:
+                content = await self.page.content()
+                print("Page content retrieved.")
+                return content
+            except Exception as e:
+                print(f"Error retrieving page content: {e}")
+                return None
+        else:
+            print("Error: Page not open. Cannot retrieve content.")
+            return None
+
