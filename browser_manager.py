@@ -6,16 +6,16 @@ class BrowserManager:
     def __init__(self):
         self.browser = None
         self.page = None
-        self._playwright = None # Store playwright instance
+        self._playwright_context = None # Store playwright async context manager
 
     async def open_browser_page(self):
         """Opens a new browser instance and page."""
         print("Opening browser...")
-        # Use async with for cleaner resource management - switching back to explicit start/stop
-        # self._playwright_context = await async_playwright().__aenter__()
-        self._playwright = await async_playwright().start()
-        # Use headless=False to see the browser
-        self.browser = await self._playwright.chromium.launch(headless=False)
+        # Use async with for cleaner resource management
+        self._playwright_context = await async_playwright().__aenter__()
+        # Use headless mode based on environment variable
+        headless = os.getenv('HEADLESS', 'false').lower() == 'true'
+        self.browser = await self._playwright_context.chromium.launch(headless=headless)
         self.page = await self.browser.new_page()
         print("Browser opened.")
 
@@ -27,10 +27,10 @@ class BrowserManager:
             self.browser = None
             self.page = None
             print("Browser closed.")
-        # Use explicit stop instead of __aexit__
-        if self._playwright:
-            await self._playwright.stop()
-            self._playwright = None
+        # Use __aexit__ for cleaner resource management
+        if self._playwright_context:
+            await self._playwright_context.__aexit__(None, None, None)
+            self._playwright_context = None
 
 
     async def goto(self, url):
